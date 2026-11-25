@@ -261,6 +261,7 @@ p { margin: 0 0 1.1rem; }
   color: var(--ink-soft);
 }
 .site-footer p { margin: 0.3rem 0; }
+.site-footer .fine-print { font-size: 0.78rem; line-height: 1.5; opacity: 0.8; max-width: 40rem; margin: 0.6rem auto; }
 
 /* ---------- FAQ ---------- */
 .faq h2 { margin-top: 0.5rem; }
