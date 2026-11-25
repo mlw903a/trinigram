@@ -1,0 +1,2 @@
+# trinigram
+Trinigram static site
