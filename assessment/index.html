@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <title>Trinigram Quiz</title>
+  <meta name="description" content="Trinigram is a free, private, 5-minute quiz to explore your connections with Father, Son, and Spirit.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="bar">
+      <a class="wordmark" href="../" aria-label="Trinigram home"><svg viewBox="0 0 34 32" aria-hidden="true" focusable="false">
+  <polygon points="17,4 4,27 30,27" fill="none" stroke="#3b2a1a" stroke-width="1" stroke-linejoin="round"/>
+  <circle cx="17" cy="4" r="3.2" fill="#d4a94a" stroke="#3b2a1a" stroke-width="0.6"/>
+  <circle cx="4" cy="27" r="3.2" fill="#b23a3c" stroke="#3b2a1a" stroke-width="0.6"/>
+  <circle cx="30" cy="27" r="3.2" fill="#3f68ad" stroke="#3b2a1a" stroke-width="0.6"/>
+</svg><span>TRINIGRAM</span></a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="../assessment/" aria-current="page">Trinigram Quiz</a></li>
+          <li><a href="../dive-deeper/">FAQ</a></li>
+          <li><a href="../books-articles/">Resources</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="column page-top">
+      <div id="quiz-view">
+        <span class="label">The Assessment</span>
+        <h1>Trinigram Quiz</h1>
+        <p class="lede">Your faith journey is a unique story. Curious about yours?...</p>
+        <div class="scale-legend" aria-hidden="true"><span>0 · Never</span><span>Sometimes</span><span>Always · 5</span></div>
+
+        <noscript><p class="center" style="margin-top:2rem">The quiz runs entirely in your browser and needs JavaScript turned on. Nothing is sent or stored.</p></noscript>
+
+        <form id="quiz" class="hidden" novalidate>
+          <div class="progress" aria-hidden="true">
+            <div class="meta"><span id="progress-text">Question 1 of 30</span><span id="progress-pct">0%</span></div>
+            <div class="track"><div class="fill" id="progress-fill" style="width:0%"></div></div>
+          </div>
+          <div id="live" class="sr-only" aria-live="polite" style="position:absolute;left:-9999px"></div>
+          <fieldset class="question" id="question">
+            <legend id="q-text" tabindex="-1"></legend>
+            <div class="options" id="q-options"></div>
+          </fieldset>
+          <div class="quiz-nav">
+            <button type="button" class="btn ghost" id="prev">← Back</button>
+            <button type="button" class="btn" id="next">Next →</button>
+          </div>
+        </form>
+      </div>
+
+      <div id="results-view" class="hidden" tabindex="-1">
+        <span class="label">Your Results</span>
+        <h1>Your Trinigram Results</h1>
+
+        <div class="ornament" aria-hidden="true"><span></span><span></span><span></span></div>
+
+        <section aria-labelledby="r-balance">
+          <h2 id="r-balance">Your Faith Balance</h2>
+          <div id="results-venn"></div>
+          <div class="bars">
+            <div class="bar-row">
+              <div class="bar-head"><span class="name t-g">Glory<span class="badge hidden" data-badge="glory"></span></span><span class="pct t-g" id="pct-glory"></span></div>
+              <div class="bar-track"><div class="bar-fill g" id="bar-glory"></div></div>
+              <p class="desc">Awareness of God's design</p>
+            </div>
+            <div class="bar-row">
+              <div class="bar-head"><span class="name t-p">Pursuit<span class="badge hidden" data-badge="pursuit"></span></span><span class="pct t-p" id="pct-pursuit"></span></div>
+              <div class="bar-track"><div class="bar-fill p" id="bar-pursuit"></div></div>
+              <p class="desc">Following Jesus' example</p>
+            </div>
+            <div class="bar-row">
+              <div class="bar-head"><span class="name t-a">Attunement<span class="badge hidden" data-badge="attunement"></span></span><span class="pct t-a" id="pct-attunement"></span></div>
+              <div class="bar-track"><div class="bar-fill a" id="bar-attunement"></div></div>
+              <p class="desc">Spirit's guidance awareness</p>
+            </div>
+          </div>
+        </section>
+
+        <div class="ornament" aria-hidden="true"><span></span><span></span><span></span></div>
+
+        <section class="narrative" aria-labelledby="r-narr">
+          <h2 id="r-narr">Your Faith Narrative</h2>
+          <h3 class="t-g">Glory: Your Connection with the Father</h3>
+          <p id="narr-glory"></p>
+          <h3 class="t-p">Pursuit: Your Connection with Jesus</h3>
+          <p id="narr-pursuit"></p>
+          <h3 class="t-a">Attunement: Your Connection with the Spirit</h3>
+          <p id="narr-attunement"></p>
+        </section>
+
+        <div class="ornament" aria-hidden="true"><span></span><span></span><span></span></div>
+
+        <section aria-labelledby="r-thanks">
+          <h2 id="r-thanks">Thank You for Participating!</h2>
+          <p>Your Trinigram journey has just begun, and we're excited for the path ahead. Curious about what a balanced faith might look like? Scroll down and check out our "A Word About Balance" section.</p>
+          <p>It's like a treasure map of spiritual growth—highlighting the keywords and nuances that can help you expand your awareness, deepen your connections, and navigate your unique faith journey with more intention and grace.</p>
+          <div class="beta">
+            <span class="caps">Beta Version</span>
+            <p style="margin:0.4rem 0 0">Trinigram is currently in beta testing. We appreciate you trying out this early version. Personalized growth resources for each dimension are coming soon!</p>
+          </div>
+        </section>
+
+        <div class="ornament" aria-hidden="true"><span></span><span></span><span></span></div>
+
+        <section class="keywords" aria-labelledby="r-word">
+          <h2 id="r-word">A Word About Balance</h2>
+          <h3>The Interconnected Nature of Faith</h3>
+          <p>Think of your faith journey not as separate lanes, but as a vibrant, interconnected ecosystem. Glory, Pursuit, and Attunement aren't isolated practices—they're deeply interwoven, each dimension enriching and informing the others.</p>
+          <p>Like a living, breathing network, these practices create a multiplicity of spiritual experiences. When you deepen your awareness of God's design (Glory), it shapes how you follow Christ's example (Pursuit). As you tune into the Spirit's guidance (Attunement), it illuminates your understanding of both. They're not linear steps, but a dynamic, multidimensional dance—constantly moving, supporting, and revealing each other.</p>
+          <p><em>This isn't about perfect balance, but about embracing the beautiful complexity of your spiritual landscape.</em></p>
+
+          <h4 class="t-g">Glory: Recognizing the Father's Design</h4>
+          <p class="sub">Your Expansion Playground</p>
+          <p>Imagine walking through life with wonder-filled eyes. This is about seeing beauty in the everyday, celebrating creation's intricacy, and recognizing divine design in both grand landscapes and tiny moments.</p>
+          <dl>
+            <dt>Embrace More:</dt><dd>Wonder, Awe, Appreciation, Stewardship, Compassion, Gratitude, Reflection, Grace, Intentionality</dd>
+            <dt>Gently Release:</dt><dd>Thanklessness, Ingratitude, Cynicism, Indifference, Criticism</dd>
+          </dl>
+
+          <h4 class="t-p">Pursuit: Following Christ's Example</h4>
+          <p class="sub">Your Learning Studio</p>
+          <p>This is about more than asking "What Would Jesus Do?" It's about deeply understanding Jesus's approach to life, relationships, and navigating complex human experiences.</p>
+          <dl>
+            <dt>Cultivate More:</dt><dd>Study, Example, Interactions, Mind of Christ, Contemplation, Wisdom, Humility, Gentleness, Intentionality, Compassionate Responses</dd>
+            <dt>Gently Move Past:</dt><dd>Rigidity, Passivity, Inconsistency, Indecision, Superficial Engagement</dd>
+          </dl>
+
+          <h4 class="t-a">Attunement: Experiencing the Spirit's Guidance</h4>
+          <p class="sub">Your Spiritual Listening Room</p>
+          <p>This is about developing a sensitivity to divine whispers—learning to distinguish between noise and genuine spiritual guidance.</p>
+          <dl>
+            <dt>Amplify:</dt><dd>Awareness, Listening, Presence, Guidance, Peace, Discernment, Intuition, Alignment, Trust, Openness</dd>
+            <dt>Gradually Soften:</dt><dd>Ego-centricity, Impulsiveness, Distraction, Busyness, Self-reliance</dd>
+          </dl>
+
+          <p class="closing">The Real Miracle? Balance isn't about perfection. It's about ongoing, graceful movement—expanding in some areas, gently releasing in others, always with compassion for yourself and others.</p>
+        </section>
+
+        <div class="ornament" aria-hidden="true"><span></span><span></span><span></span></div>
+
+        <section class="center no-print" aria-labelledby="r-beta">
+          <h2 id="r-beta">Beta Tester Feedback</h2>
+          <p>Thank you for trying Trinigram! As a beta tester, your feedback is invaluable to us. Please take a moment to share your thoughts and help us improve.</p>
+          <p><a class="btn ghost" href="https://forms.gle/3RPEUc8yTdZ2AuGF9" rel="noopener noreferrer">Give Feedback</a></p>
+        </section>
+
+        <div class="btn-row">
+          <button type="button" class="btn ghost" id="retake">Retake Assessment</button>
+          <button type="button" class="btn" id="print">Print Results</button>
+          <button type="button" class="btn ghost" id="copy">Copy Summary</button>
+        </div>
+        <p class="center small no-print" id="status" role="status" aria-live="polite"></p>
+
+        <div class="ornament" aria-hidden="true"><span></span><span></span><span></span></div>
+
+        <section class="center no-print" aria-labelledby="r-faq">
+          <h2 id="r-faq">Want to Understand Your Results Better?</h2>
+          <p>Check out our FAQ to learn what your Trinigram balance means and how it shapes your faith journey.</p>
+          <p><a class="btn" href="../dive-deeper/">View Frequently Asked Questions</a></p>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <p>Visit our sister site <a href="https://biblenerd.ai/" rel="noopener noreferrer">BibleNerd.ai</a> — Safe, private, and forever free. Enjoy your Bible.</p>
+    <p>© Trinigram. All rights reserved.</p>
+  </footer>
+  <script src="../js/quiz.js"></script>
+</body>
+</html>
